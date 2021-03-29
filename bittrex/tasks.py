@@ -10,7 +10,7 @@ api_client = APIClient()
 
 @shared_task(name='load_data_from_api')
 def load_data_from_api():
-    data = api_client.get_btc_sumarry()
+    data = api_client.get_btc_summary()
     if data:
         # Save data to database
         BTCSummary.objects.create(
