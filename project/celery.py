@@ -14,6 +14,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'add-every-minute-contrab': {
         'task': 'load_data_from_api',
-        'schedule': crontab(minute=1),
+        'schedule': crontab(),  # Every minute
     },
 }
