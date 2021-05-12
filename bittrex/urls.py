@@ -1,6 +1,6 @@
 from django.urls import path
-from bittrex import views
+from bittrex.api import views
 
 urlpatterns = [
-    path('btc/summary', views.ListBTCSummaryAPIView.as_view(), name='btc_summary'),
+    path('bittrex/btc_summary', views.BTCSummaryListAPIView.as_view(), name='btc_summary'),
 ]

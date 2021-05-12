@@ -1,8 +1,9 @@
 import requests
 
 
-class APIClient:
-    API_ENDPOINT = 'https://api.bittrex.com/v3/markets/BTC-USDT/summary'
+class Bittrex:
+    def __init__(self):
+        self.API_ENDPOINT = 'https://api.bittrex.com/v3/markets/BTC-USDT/summary'
 
     def get_btc_summary(self):
         response = requests.get(self.API_ENDPOINT)

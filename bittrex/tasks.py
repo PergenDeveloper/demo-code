@@ -3,14 +3,14 @@ from celery import shared_task
 
 from bittrex.models import BTCSummary
 
-from bittrex.api import APIClient
+from bittrex.clients import Bittrex
 
-api_client = APIClient()
+client = Bittrex()
 
 
 @shared_task(name='load_data_from_api')
 def load_data_from_api():
-    data = api_client.get_btc_summary()
+    data = client.get_btc_summary()
     if data:
         # Save data to database
         BTCSummary.objects.create(
